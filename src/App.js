@@ -4,6 +4,7 @@ import CountriesList from './components/CountriesList';
 import CountryDetails from './components/CountryDetails';
 import { Route, Routes } from 'react-router';
 import countries from './countries.json';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           </div>
           <div className="col-7">
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/:countryId" element={<CountryDetails />} />
             </Routes>
           </div>

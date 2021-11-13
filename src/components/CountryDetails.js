@@ -9,8 +9,6 @@ function CountriesDetails() {
     return currentCountryObj.cca3 === params.countryId;
   }); // armazena o objeto completo do país achado
 
-  console.log(foundCountry)
-  
   return (
     <div className="col-7">
       <h1>{foundCountry.name.common}</h1>
