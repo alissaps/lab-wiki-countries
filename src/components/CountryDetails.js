@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import countries from '../countries.json';
 
-function CountriesDetails() {
+function CountriesDetails(props) {
   const params = useParams(); // armazena só a string recebida pelo Route ":countryId"
   
-  const foundCountry = countries.find((currentCountryObj) => {
+  const foundCountry = props.countries.find((currentCountryObj) => {
     return currentCountryObj.cca3 === params.countryId;
   }); // armazena o objeto completo do país achado
 
@@ -31,7 +30,7 @@ function CountriesDetails() {
             <td>
               <ul>
                 {foundCountry.borders.map((currentBorderCca3) => {
-                    const borderCountryObj = countries.find((currentCountryObj) => {
+                    const borderCountryObj = props.countries.find((currentCountryObj) => {
                         return currentCountryObj.cca3 === currentBorderCca3;
                       }); // armazena o objeto completo a partir da string do border
                   return (
